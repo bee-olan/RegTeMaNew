@@ -41,7 +41,8 @@ jobs:
                 uses: azure/docker-login@v1
                 with:
                     login-server: ${{ env.REGISTRY_HOST }}
-                    username: ${{ secrets.REGISTRY_USER }}
+                    username: ${{ github.actor }}
+                    # username: ${{ secrets.REGISTRY_USER }}
                     password: ${{ github.token }}
 
             -   name: Permissions
